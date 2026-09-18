@@ -1,6 +1,6 @@
 # NotYet
 
-> Software that remembers why you said no — and tells you when the answer should change.
+> Software that remembers why you said no and tells you when the answer should change.
 
 Teams document what they build. The rejected ideas, original trade-offs, and conditions that would make an old “no” worth revisiting usually disappear into a meeting note.
 
