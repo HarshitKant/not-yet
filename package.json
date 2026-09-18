@@ -1,0 +1,28 @@
+{
+  "name": "not-yet",
+  "version": "1.0.0",
+  "description": "Software that remembers why you said no — and tells you when the answer should change.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarshitKant/not-yet.git"
+  },
+  "type": "module",
+  "dependencies": {
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "^7.0.2"
+  }
+}
