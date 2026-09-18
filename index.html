@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101015" />
+    <title>NotYet — Decisions, remembered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a href="#watchlist" class="brand" data-view="watchlist" aria-label="NotYet home">
+          <span class="brand-mark">N</span>
+          <span>Not<span>Yet</span></span>
+        </a>
+
+        <button class="new-decision" id="newDecisionBtn">
+          <span>+</span> New decision
+        </button>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="#watchlist" class="nav-item active" data-view="watchlist"><i>◒</i> Watchlist <b>3</b></a>
+          <a href="#decisions" class="nav-item" data-view="decisions"><i>▱</i> Decisions</a>
+          <a href="#signals" class="nav-item" data-view="signals"><i>⌁</i> Signals <b>7</b></a>
+          <a href="#templates" class="nav-item" data-view="templates"><i>□</i> Templates</a>
+        </nav>
+
+        <div class="sidebar-label">WORKSPACE</div>
+        <button class="workspace-switcher">
+          <span class="avatar work-avatar">P</span>
+          <span>Prism Labs</span>
+          <span class="chev">⌄</span>
+        </button>
+
+        <div class="sidebar-footer">
+          <button class="help-link" id="showHowItWorks"><span>?</span> How NotYet works</button>
+          <div class="user-row"><span class="avatar">AM</span><span>Alex Morgan</span><span class="status-dot"></span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb" id="breadcrumb"><span>Workspace</span><i>/</i><strong>Watchlist</strong></div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="searchBtn" aria-label="Search"><span>⌕</span></button>
+            <button class="icon-button notification" aria-label="Notifications"><span>♧</span><em></em></button>
+          </div>
+        </header>
+
+        <section id="watchlistView" class="view active-view">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">YOUR DECISION WATCHLIST</p>
+              <h1>What changed while<br />you <em>waited?</em></h1>
+            </div>
+            <div class="heading-note"><span class="pulse-dot"></span> Signals checked today, 09:12</div>
+          </div>
+
+          <div class="summary-band">
+            <div class="summary-stat"><span class="stat-number">3</span><span class="stat-label">Decisions<br />being watched</span></div>
+            <div class="summary-stat emphasized"><span class="stat-number">1</span><span class="stat-label">Ready for<br />re-evaluation</span></div>
+            <div class="summary-stat"><span class="stat-number">7</span><span class="stat-label">New signals<br />this week</span></div>
+            <div class="summary-quote">“A no is only useful if you remember<br />what would make it a yes.”</div>
+          </div>
+
+          <div class="section-header">
+            <div><h2>Needs your attention</h2><p>Original assumptions have changed.</p></div>
+            <button class="text-button" id="showAllBtn">View all decisions <span>→</span></button>
+          </div>
+
+          <article class="decision-card feature-card" id="voiceDecisionCard" tabindex="0" role="button" aria-label="Open AI Voice Interface decision">
+            <div class="card-topline"><span class="signal-label ready">READY TO REVISIT</span><span class="card-date">Deferred · Mar 14, 2025</span><button class="more-button" aria-label="More options">•••</button></div>
+            <div class="feature-card-content">
+              <div class="decision-icon voice-icon">⌁</div>
+              <div class="feature-main">
+                <h3>AI voice interface</h3>
+                <p>Deferred until voice could meet the reliability bar for Indian English.</p>
+                <div class="condition-progress"><span><b>3</b> of 4 original blockers have cleared</span><div class="progress-line"><i style="width:75%"></i></div></div>
+              </div>
+              <div class="condition-changes">
+                <div><span class="check">✓</span><span>Latency <b>1.8s → 320ms</b></span></div>
+                <div><span class="check">✓</span><span>Cost <b>₹2.10 → ₹0.38/min</b></span></div>
+                <div><span class="check">✓</span><span>Accuracy <b>96.4%</b></span></div>
+                <div class="pending"><span>○</span><span>Demand <b>not yet checked</b></span></div>
+              </div>
+              <button class="review-button card-review">Re-evaluate <span>→</span></button>
+            </div>
+          </article>
+
+          <div class="section-header lower-header">
+            <div><h2>Still watching</h2><p>Not enough has changed—yet.</p></div>
+            <button class="sort-button">Last updated <span>⌄</span></button>
+          </div>
+
+          <div class="decision-grid" id="decisionGrid">
+            <article class="decision-card compact-card" data-id="marketplace">
+              <div class="card-topline"><span class="signal-label watching">WATCHING</span><span class="card-date">Jun 03, 2025</span><button class="more-button">•••</button></div>
+              <div class="compact-content"><div class="decision-icon marketplace-icon">↗</div><div><h3>Launch B2B marketplace</h3><p>Waiting for repeat buyer demand.</p></div></div>
+              <div class="compact-progress"><span><b>1</b> / 3 conditions met</span><div class="progress-line"><i style="width:33%"></i></div></div>
+              <div class="card-footer"><span>Next check <b>Oct 01</b></span><button class="open-decision">Open <span>→</span></button></div>
+            </article>
+
+            <article class="decision-card compact-card" data-id="enterprise">
+              <div class="card-topline"><span class="signal-label watching">WATCHING</span><span class="card-date">Apr 21, 2025</span><button class="more-button">•••</button></div>
+              <div class="compact-content"><div class="decision-icon enterprise-icon">⌘</div><div><h3>Enterprise SSO</h3><p>Waiting for a repeatable sales trigger.</p></div></div>
+              <div class="compact-progress"><span><b>0</b> / 2 conditions met</span><div class="progress-line"><i style="width:12%"></i></div></div>
+              <div class="card-footer"><span>Next check <b>Nov 12</b></span><button class="open-decision">Open <span>→</span></button></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="detailView" class="view detail-view">
+          <button class="back-link" id="backToWatchlist">← Back to watchlist</button>
+          <div class="detail-hero">
+            <div class="decision-icon voice-icon large">⌁</div>
+            <div class="detail-title"><div class="detail-topline"><span class="signal-label ready">READY TO REVISIT</span><span>Deferred on Mar 14, 2025</span></div><h1>AI voice interface</h1><p>We deferred voice until it could meet the reliability bar for Indian English.</p></div>
+            <button class="review-button" id="detailReviewBtn">Re-evaluate decision <span>→</span></button>
+          </div>
+
+          <div class="detail-metrics">
+            <div><span>ORIGINAL BLOCKERS</span><b>4</b></div>
+            <div class="metric-strong"><span>NOW CLEARED</span><b>3</b></div>
+            <div><span>OPEN QUESTION</span><b>1</b></div>
+            <div><span>LAST SIGNAL</span><b>Today</b></div>
+          </div>
+
+          <div class="detail-layout">
+            <div class="detail-left">
+              <div class="content-section"><div class="section-kicker">THE ORIGINAL DECISION</div><div class="original-decision"><span class="quote-mark">“</span><p>We will not build a voice interface this quarter. The quality and economics do not yet justify a new interaction surface.</p><span class="decision-author"><span class="avatar small">AM</span> Alex Morgan · Product review, Q1</span></div></div>
+              <div class="content-section conditions-section"><div class="section-title-row"><div><div class="section-kicker">REVISIT CONDITIONS</div><h2>What had to change?</h2></div><button class="text-button small">Edit conditions</button></div>
+                <div class="condition-list">
+                  <article class="condition-row met"><div class="condition-state">✓</div><div class="condition-copy"><h3>Response latency under 500ms</h3><p>Average end-to-end response time for a spoken turn.</p><span class="source-pill">Live benchmark · Voice stack</span></div><div class="condition-metric"><span>THEN</span><b>1.8s</b></div><div class="metric-arrow">→</div><div class="condition-metric now"><span>NOW</span><b>320ms</b></div></article>
+                  <article class="condition-row met"><div class="condition-state">✓</div><div class="condition-copy"><h3>Inference cost below ₹0.50 / min</h3><p>Blended cost at expected volume.</p><span class="source-pill">Pricing monitor · 2 sources</span></div><div class="condition-metric"><span>THEN</span><b>₹2.10</b></div><div class="metric-arrow">→</div><div class="condition-metric now"><span>NOW</span><b>₹0.38</b></div></article>
+                  <article class="condition-row met"><div class="condition-state">✓</div><div class="condition-copy"><h3>Indian English accuracy above 95%</h3><p>Word accuracy across our test set.</p><span class="source-pill">Benchmark run · Sep 18</span></div><div class="condition-metric"><span>THEN</span><b>87.2%</b></div><div class="metric-arrow">→</div><div class="condition-metric now"><span>NOW</span><b>96.4%</b></div></article>
+                  <article class="condition-row open"><div class="condition-state">○</div><div class="condition-copy"><h3>20% of users request voice</h3><p>Demand evidence from user interviews and support.</p><span class="source-pill muted">Needs evidence · Jordan owns this</span></div><div class="condition-metric"><span>THEN</span><b>6%</b></div><div class="metric-arrow">→</div><div class="condition-metric now empty"><span>NOW</span><b>—</b></div></article>
+                </div>
+              </div>
+            </div>
+            <aside class="detail-right">
+              <div class="timeline-card"><div class="section-kicker">SIGNAL TIMELINE</div><h3>What changed</h3><div class="timeline"><div class="timeline-item new"><span class="timeline-node"></span><div><time>Today · 09:12</time><p>Accuracy cleared the 95% threshold.</p></div></div><div class="timeline-item"><span class="timeline-node"></span><div><time>Sep 10</time><p>Inference pricing fell below ₹0.50/min.</p></div></div><div class="timeline-item"><span class="timeline-node"></span><div><time>Aug 28</time><p>Latency benchmark cleared.</p></div></div><div class="timeline-item"><span class="timeline-node"></span><div><time>Mar 14</time><p>Decision deferred with four conditions.</p></div></div></div><button class="view-signals">View 7 linked signals →</button></div>
+              <div class="owner-card"><span class="avatar">AM</span><div><span>DECISION OWNER</span><b>Alex Morgan</b></div><button>•••</button></div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="simpleView" class="view simple-view"><div class="empty-state"><span class="empty-glyph">◌</span><p class="eyebrow">NOT YET</p><h1 id="simpleViewTitle">Decisions</h1><p id="simpleViewText">Your decision memory, in one place.</p><button class="new-decision inline" id="inlineDecisionBtn"><span>+</span> New decision</button></div></section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+      <div class="modal" id="newDecisionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" data-close-modal aria-label="Close">×</button>
+        <p class="eyebrow">NEW DEFERRED DECISION</p><h2 id="modalTitle">Make your “not yet” useful.</h2><p class="modal-intro">Capture the option, then make the conditions for revisiting it explicit.</p>
+        <form id="decisionForm"><label>What are you deferring?<input id="decisionName" required placeholder="e.g. Build AI voice interface" /></label><label>Why not now?<textarea id="decisionWhy" required placeholder="What makes this too early today?"></textarea></label><label>Revisit when<input id="decisionCondition" required placeholder="e.g. Cost drops below ₹0.50 / min" /></label><button class="review-button form-submit" type="submit">Save decision <span>→</span></button></form>
+      </div>
+      <div class="modal reeval-modal" id="reevalModal" role="dialog" aria-modal="true" aria-labelledby="reevalTitle">
+        <button class="modal-close" data-close-modal aria-label="Close">×</button><div class="modal-badge">3 / 4 CONDITIONS CLEARED</div><h2 id="reevalTitle">Ready to look again?</h2><p class="modal-intro">NotYet has preserved the original decision and the evidence that changed. The decision is still yours.</p><div class="reeval-compare"><div><span>THEN</span><b>Too slow, too costly, not accurate enough.</b></div><div><span>NOW</span><b>All three technical blockers have cleared.</b></div></div><button class="review-button form-submit" id="confirmReview">Open re-evaluation <span>→</span></button><button class="secondary-modal-button" data-close-modal>Keep watching</button>
+      </div>
+      <div class="modal how-modal" id="howModal" role="dialog" aria-modal="true" aria-labelledby="howTitle">
+        <button class="modal-close" data-close-modal aria-label="Close">×</button><p class="eyebrow">HOW IT WORKS</p><h2 id="howTitle">A decision has a half-life.</h2><ol><li><span>1</span><div><b>Capture the no</b><p>Save the alternative, reasoning, and evidence—not just the winning choice.</p></div></li><li><span>2</span><div><b>Define the change</b><p>Turn “revisit later” into conditions with thresholds and owners.</p></div></li><li><span>3</span><div><b>Re-open deliberately</b><p>When conditions shift, see the original context before deciding again.</p></div></li></ol></div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
