@@ -1,0 +1,27 @@
+@import "../styles.css";
+
+button.brand {
+  position: relative;
+  width: calc(100% - 8px);
+  min-height: 66px;
+  margin: -6px 4px 14px;
+  padding: 11px 12px 22px;
+  border: 1px solid rgba(192, 184, 255, 0.25);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(105, 89, 223, 0.34), rgba(43, 40, 67, 0.55));
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+button.brand::after { position: absolute; bottom: 7px; left: 54px; color: #aaa5d8; content: 'DECISION MEMORY'; font: 500 8px var(--mono); letter-spacing: .14em; }
+button.brand .brand-mark { width: 31px; height: 31px; border-radius: 9px; color: #221e45; background: #c3bdff; box-shadow: 0 5px 18px rgba(0,0,0,.2); }
+button.brand > span:last-child { color: #fff; font-size: 24px; letter-spacing: -1.25px; }
+button.brand > span:last-child span { color: #c3bdff; }
+button.nav-item { width: 100%; border: 0; background: transparent; font-family: var(--sans); text-align: left; cursor: pointer; }
+button.nav-item:hover { background: #222229; color: #ecebf2; }
+button.nav-item.active { color: #fff; background: #292830; }
+button.nav-item.active i { color: #c4beff; }
+.page-heading .eyebrow::before { display: inline-block; margin-right: 10px; color: var(--violet); content: 'NOTYET'; font-weight: 600; letter-spacing: .06em; }
+.simple-view .empty-state { min-width: 360px; padding: 34px 52px; border: 1px solid #e5e0ff; border-radius: 18px; background: radial-gradient(circle at top,#fbfaff,#fff); box-shadow: 0 18px 50px rgba(72,57,185,.08); }
+.simple-view .empty-state .eyebrow::before { display: block; margin: 0 0 8px; color: var(--violet); content: 'NOTYET'; font: 600 11px var(--mono); letter-spacing: .12em; }
+@media (max-width:780px) { button.brand { width:38px; min-height:38px; margin:-4px 0 18px; padding:4px; border-radius:10px; } button.brand::after { display:none; } button.brand .brand-mark { width:30px; height:30px; } .simple-view .empty-state { min-width:0; padding:28px; } }
